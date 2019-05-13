@@ -1,7 +1,3 @@
-type Query {
-  dummy: String
-}
-
 type User {
   _id: ID
   username: String! @unique
@@ -29,4 +25,12 @@ type Message {
   messageBody: String!
   messageDate: String
   messageUser: User!
+}
+
+type Query {
+  getUser: User
+}
+
+type Mutation {
+  signupUser(username: String!, email: String!, password: String!): User!
 }
